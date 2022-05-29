@@ -18,7 +18,7 @@ the end part of the link is the address of the respective pair contract ```0x0d4
 ##### Steps to run the code ::
 
 1. Clone this repo 
-2. Paste infura end pint url in .env file
+2. Paste infura end point url in .env file
 3. ```npm i```
 4. ```node index.js```
 
