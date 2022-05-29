@@ -20,7 +20,7 @@ const PAIR_NAME4 = "ETH/WBTC";
 const PAIR_ADDR5 = "0xd3d2e2692501a5c9ca623199d38826e513033a17";
 const PAIR_NAME5 = "ETH/UNI";
 
-const INTERVAL = 2000; //in ms :: so after every 1 second we will get the value of tokens
+const INTERVAL = 2000; //in ms :: so after every 2 second we will get the value of tokens
 
 // create web3 contract object:: passing the abi of the contract and the address of contract
 const PairContractHTTP1 = new blk.web3http.eth.Contract(
@@ -48,33 +48,6 @@ const PairContractHTTP5 = new blk.web3http.eth.Contract(
     PAIR_ADDR5
 );
 
-//subscribing to events, so creating an object
-//contract object for websocket provider
-// const PairContractWSS1 = new blk.web3ws.eth.Contract(
-//     UniswapV2Pair.abi,
-//     PAIR_ADDR1
-// );
-
-// const PairContractWSS2 = new blk.web3ws.eth.Contract(
-//     UniswapV2Pair.abi,
-//     PAIR_ADDR2
-// );
-
-// const PairContractWSS3 = new blk.web3ws.eth.Contract(
-//     UniswapV2Pair.abi,
-//     PAIR_ADDR3
-// );
-
-// const PairContractWSS4 = new blk.web3ws.eth.Contract(
-//     UniswapV2Pair.abi,
-//     PAIR_ADDR4
-// );
-
-// const PairContractWSS5 = new blk.web3ws.eth.Contract(
-//     UniswapV2Pair.abi,
-//     PAIR_ADDR5
-// );
-
 //object to store the state of blockchain,
 //storing blocknumber and amount of token0 and token1 inside reserve state
 // const state = {
@@ -84,20 +57,6 @@ const PairContractHTTP5 = new blk.web3http.eth.Contract(
 // };
 
 // //function that'll be updated after every event
-// const updateState1 = (data) => {
-//     // update state
-//     state.token0 = Big(data.returnValues.reserve0);
-//     state.token1 = Big(data.returnValues.reserve1);
-//     state.blockNumber = data.blockNumber;
-
-//     // calculate price and print
-//     console.log(
-//         `${state.blockNumber} Price ${PAIR_NAME1} : ${state.token0
-//             .div(state.token1)
-//             .toString()}`
-//     );
-// };
-
 // const updateState2 = (data) => {
 //     // update state
 //     state.token0 = Big(data.returnValues.reserve0);
@@ -107,48 +66,6 @@ const PairContractHTTP5 = new blk.web3http.eth.Contract(
 //     // calculate price and print
 //     console.log(
 //         `${state.blockNumber} Price ${PAIR_NAME2} : ${state.token0
-//             .div(state.token1)
-//             .toString()}`
-//     );
-// };
-
-// const updateState3 = (data) => {
-//     // update state
-//     state.token0 = Big(data.returnValues.reserve0);
-//     state.token1 = Big(data.returnValues.reserve1);
-//     state.blockNumber = data.blockNumber;
-
-//     // calculate price and print
-//     console.log(
-//         `${state.blockNumber} Price ${PAIR_NAME3} : ${state.token0
-//             .div(state.token1)
-//             .toString()}`
-//     );
-// };
-
-// const updateState4 = (data) => {
-//     // update state
-//     state.token0 = Big(data.returnValues.reserve0);
-//     state.token1 = Big(data.returnValues.reserve1);
-//     state.blockNumber = data.blockNumber;
-
-//     // calculate price and print
-//     console.log(
-//         `${state.blockNumber} Price ${PAIR_NAME4} : ${state.token0
-//             .div(state.token1)
-//             .toString()}`
-//     );
-// };
-
-// const updateState5 = (data) => {
-//     // update state
-//     state.token0 = Big(data.returnValues.reserve0);
-//     state.token1 = Big(data.returnValues.reserve1);
-//     state.blockNumber = data.blockNumber;
-
-//     // calculate price and print
-//     console.log(
-//         `${state.blockNumber} Price ${PAIR_NAME5} : ${state.token0
 //             .div(state.token1)
 //             .toString()}`
 //     );
@@ -251,24 +168,6 @@ const mainHTTP5 = async () => {
     }
 };
 
-// const mainWSS1 = async () => {
-//     // fetch current state of reserves
-//     [state.token0, state.token1] = await getReserves(PairContractHTTP1);
-
-//     // get current block number
-//     state.blockNumber = await blk.web3http.eth.getBlockNumber();
-
-//     // subscribe to Sync event of Pair
-//     PairContractWSS1.events.Sync({}).on("data", (data) => updateState1(data));
-
-//     // calculate price and print
-//     console.log(
-//         `${state.blockNumber} Price ${PAIR_NAME1} : ${state.token0
-//             .div(state.token1)
-//             .toString()}`
-//     );
-// };
-
 // const mainWSS2 = async () => {
 //     // fetch current state of reserves
 //     [state.token0, state.token1] = await getReserves(PairContractHTTP2);
@@ -287,65 +186,8 @@ const mainHTTP5 = async () => {
 //     );
 // };
 
-// const mainWSS3 = async () => {
-//     // fetch current state of reserves
-//     [state.token0, state.token1] = await getReserves(PairContractHTTP3);
-
-//     // get current block number
-//     state.blockNumber = await blk.web3http.eth.getBlockNumber();
-
-//     // subscribe to Sync event of Pair
-//     PairContractWSS3.events.Sync({}).on("data", (data) => updateState3(data));
-
-//     // calculate price and print
-//     console.log(
-//         `${state.blockNumber} Price ${PAIR_NAME3} : ${state.token0
-//             .div(state.token1)
-//             .toString()}`
-//     );
-// };
-
-// const mainWSS4 = async () => {
-//     // fetch current state of reserves
-//     [state.token0, state.token1] = await getReserves(PairContractHTTP4);
-
-//     // get current block number
-//     state.blockNumber = await blk.web3http.eth.getBlockNumber();
-
-//     // subscribe to Sync event of Pair
-//     PairContractWSS4.events.Sync({}).on("data", (data) => updateState4(data));
-
-//     // calculate price and print
-//     console.log(
-//         `${state.blockNumber} Price ${PAIR_NAME4} : ${state.token0
-//             .div(state.token1)
-//             .toString()}`
-//     );
-// };
-
-// const mainWSS5 = async () => {
-//     // fetch current state of reserves
-//     [state.token0, state.token1] = await getReserves(PairContractHTTP5);
-
-//     // get current block number
-//     state.blockNumber = await blk.web3http.eth.getBlockNumber();
-
-//     // subscribe to Sync event of Pair
-//     PairContractWSS5.events.Sync({}).on("data", (data) => updateState5(data));
-
-//     // calculate price and print
-//     console.log(
-//         `${state.blockNumber} Price ${PAIR_NAME5} : ${state.token0
-//             .div(state.token1)
-//             .toString()}`
-//     );
-// };
-
-// mainWSS1();
 // mainWSS2();
-// mainWSS3();
-// mainWSS4();
-// mainWSS5();
+
 
 mainHTTP1();
 mainHTTP2();
