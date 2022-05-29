@@ -32,3 +32,18 @@ https://user-images.githubusercontent.com/75042859/170857845-f5bd3e37-efc3-4450-
 
 https://user-images.githubusercontent.com/75042859/170857863-429a3e45-f2a7-4a34-ad07-3fce51e9d7e1.mp4
 
+### RESULT :-
+
+uering the blockchain every secondto see if there is a price change and then we are calculating the price change based on the reserves.
+
+# Tried to optimise:-
+By subscribing to blockchain events and then wait for the reserves of pair changes and then recalculate the price according to that.
+Using sync event that gets emitted everytime when reserves got updated from unisawp/smartcontract/pair documentation.
+So declared a contract object using web socket provider.
+
+### Result :-
+Worked for a single pair, first printing block number and then the pricing.
+
+https://user-images.githubusercontent.com/75042859/170858786-16875cd8-3339-41ad-aa15-c851ac9f6f85.mp4
+
+But started having issues when applied to all five pairs, resulting in mixed outputs, same outputs for all pairs, overall not correct outputs. So commented the working web socket provider code for a single pair in index.js.
