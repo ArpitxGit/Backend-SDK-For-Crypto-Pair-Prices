@@ -20,7 +20,7 @@ const PAIR_NAME4 = "ETH/WBTC";
 const PAIR_ADDR5 = "0xd3d2e2692501a5c9ca623199d38826e513033a17";
 const PAIR_NAME5 = "ETH/UNI";
 
-const INTERVAL = 2000; //in ms :: so after every 2 second we will get the value of tokens
+const INTERVAL = 1000; //in ms :: so after every 1 second we will get the value of tokens
 
 // create web3 contract object:: passing the abi of the contract and the address of contract
 const PairContractHTTP1 = new blk.web3http.eth.Contract(
@@ -47,6 +47,13 @@ const PairContractHTTP5 = new blk.web3http.eth.Contract(
     UniswapV2Pair.abi,
     PAIR_ADDR5
 );
+
+//subscribing to events, so creating an object
+//contract object for websocket provider
+// const PairContractWSS2 = new blk.web3ws.eth.Contract(
+//     UniswapV2Pair.abi,
+//     PAIR_ADDR2
+// );
 
 //object to store the state of blockchain,
 //storing blocknumber and amount of token0 and token1 inside reserve state
