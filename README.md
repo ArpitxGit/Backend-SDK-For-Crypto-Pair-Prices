@@ -10,6 +10,10 @@ Backend SDK through which anyone can integrate/calculate multiple crypto pair pr
 ### Used uniswap pair contract api for interaction with uniswap pair contract from here:-
 https://docs.uniswap.org/protocol/V2/reference/smart-contracts/pair.
 
+### For any pair we need address of the pair contract from here:- https://v2.info.uniswap.org/pairs 
+###### ex :: this is the web link of ETH-USDT Pair :- https://v2.info.uniswap.org/pair/0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852
+the end part of the link is the address of the pair contract ```0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852```
+
 
 ##### Steps to run the code ::
 
