@@ -46,4 +46,4 @@ Worked for a single pair, first printing block number and then the pricing.
 
 https://user-images.githubusercontent.com/75042859/170858786-16875cd8-3339-41ad-aa15-c851ac9f6f85.mp4
 
-But started having issues when applied to all five pairs, resulting in mixed outputs, same outputs for all pairs, overall not correct outputs. So commented the working web socket provider code for a single pair in index.js.
+But started having issues when applied to all five pairs, resulting in mixed outputs, same outputs for all pairs, overall not correct outputs. So commented-out the working web socket provider part in the code as it was working only for a single pair in index.js.
